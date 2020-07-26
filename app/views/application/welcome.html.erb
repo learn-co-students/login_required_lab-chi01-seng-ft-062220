@@ -1,0 +1,12 @@
+<% if current_user.present? == false %>
+<h1>Hello! Please <%= link_to 'log in', '/login' %>.</h1>
+
+<% else %>
+
+<h1> Hello <%= session[:name] %>! We have a message for you. Click below to reveal. </h1> 
+
+<%= button_to 'Show me my message!', '/mymessage', method: :get %>
+<%= button_to 'Just kidding. Log Me Out', '/login', method: :delete %>
+
+
+<% end %>
